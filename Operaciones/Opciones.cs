@@ -108,10 +108,9 @@ namespace Operaciones
         }
         public string Incentivos(double a, double b, double c, double d, double e, double f)
         {
-            double pt = 0;
-            double pp = 0;
-            pt = (a + b + c + d + e + f);
-            pp = pt / 6;
+          
+           double pt = (a + b + c + d + e + f);
+           double pp = pt / 6;
             if (pp >= 100)
                 mensa = "Recibira Incentivos";
             else

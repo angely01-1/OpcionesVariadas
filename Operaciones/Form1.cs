@@ -39,7 +39,8 @@ namespace Operaciones
 
             if (paneles.ContainsKey(opcion))
             {
-                MostrarPanel(paneles[opcion]);
+                MostrarPanel(paneles[opcion
+                    ]);
             }
             else
             {
@@ -71,7 +72,8 @@ namespace Operaciones
                 { "Numero Mayor", panelNumMay },
                 { "Tipo De Triangulo", panelTipoTriangulo },
                 { "Equivalente Romano", panelNumRoman },
-                { "Bonificacion", panelMontoVentas }
+                { "Bonificacion", panelMontoVentas },
+                 { "Angely", panelMontoVentas },
             };
             Opciones.Items.Clear();
             foreach (var opcion in paneles.Keys)
@@ -172,7 +174,7 @@ namespace Operaciones
                 }
                 else MessageBox.Show("Ingrese una temperatura válida.");
             }
-            catch (Exception ex) {  MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void CaF_Click(object sender, EventArgs e)
@@ -355,14 +357,10 @@ namespace Operaciones
         {
             try
             {
-                if (int.TryParse(textAñoNa.Text, out int v1) &&
-                    int.TryParse(textFecActual.Text, out int v2))
-                {
-                    opcion1 = v1; opcion2 = v2;
-                    Resultado = Op.FechSNO(opcion1, opcion2);
-                    MensaggeSMO.Text = Resultado;
-                }
-                else MessageBox.Show("Ingrese valores válidos.");
+                opcion1 = Convert.ToInt32(textAñoNa.Text); 
+                opcion2 = Convert.ToInt32(textFecActual.Text); 
+                Resultado = Op.FechSNO(opcion1, opcion2);
+                MensaggeSMO.Text = Resultado;
             }
             catch (Exception ex)
             {
@@ -374,14 +372,11 @@ namespace Operaciones
         {
             try
             {
-                if (int.TryParse(textPriHermano.Text, out int v1) &&
-                    int.TryParse(textSegHermano.Text, out int v2))
-                {
-                    opcion1 = v1; opcion2 = v2;
-                    Resultado = Op.CalcularEdad(opcion1, opcion2);
-                    textMayHermano.Text = Resultado;
-                }
-                else MessageBox.Show("Ingrese valores válidos.");
+                opcion1 = Convert.ToInt32(textPriHermano.Text); 
+                opcion2 = Convert.ToInt32(textSegHermano.Text); 
+                Resultado = Op.CalcularEdad(opcion1, opcion2);
+                textMayHermano.Text = Resultado;
+
             }
             catch (Exception ex)
             {
@@ -393,19 +388,14 @@ namespace Operaciones
         {
             try
             {
-                if (int.TryParse(textProLunes.Text, out int v1) &&
-                    int.TryParse(textProMartes.Text, out int v2) &&
-                    int.TryParse(textProMiercoles.Text, out int v3) &&
-                    int.TryParse(textProJueves.Text, out int v4) &&
-                    int.TryParse(textProViernes.Text, out int v5) &&
-                    int.TryParse(textProSabado.Text, out int v6))
-                {
-                    opcion1 = v1; opcion2 = v2; opcion3 = v3;
-                    opcion4 = v4; opcion5 = v5; opcion6 = v6;
-                    Resultado = Op.Incentivos(opcion1, opcion2, opcion3, opcion4, opcion5, opcion6);
-                    textIncentivos.Text = Resultado;
-                }
-                else MessageBox.Show("Ingrese números válidos.");
+                opcion1 = Convert.ToInt32(textProLunes.Text); 
+                opcion2 = Convert.ToInt32(textProMartes.Text); 
+                opcion3 = Convert.ToInt32(textProMiercoles.Text);
+                opcion4 = Convert.ToInt32(textProJueves.Text); 
+                opcion5 = Convert.ToInt32(textProViernes.Text); 
+                opcion6 = Convert.ToInt32(textProSabado.Text);
+                Resultado = Op.Incentivos(opcion1, opcion2, opcion3, opcion4, opcion5, opcion6);
+                textIncentivos.Text = Resultado;
             }
             catch (Exception ex)
             {
@@ -417,15 +407,11 @@ namespace Operaciones
         {
             try
             {
-                if (int.TryParse(textPriLado.Text, out int v1) &&
-                    int.TryParse(textSegLado.Text, out int v2) &&
-                    int.TryParse(textTerLado.Text, out int v3))
-                {
-                    opcion1 = v1; opcion2 = v2; opcion3 = v3;
-                    Resultado = Op.TipoTriangulo(opcion1, opcion2, opcion3);
-                    textResTri.Text = Resultado;
-                }
-                else MessageBox.Show("Ingrese números válidos.");
+                opcion1 = Convert.ToInt32(textNumUno.Text);
+                opcion2 = Convert.ToInt32(textNumDos.Text);
+                opcion3 = Convert.ToInt32(textNumTres.Text);
+                Resultado = Op.NumeroMayor(opcion1, opcion2, opcion3);
+                textMayNum.Text = Resultado;
             }
             catch (Exception ex)
             {
@@ -437,13 +423,9 @@ namespace Operaciones
         {
             try
             {
-                if (int.TryParse(textNum.Text, out int v1))
-                {
-                    opcion1 = v1;
-                    Resultado = Op.NumRomano(((int)opcion1)).ToString();
-                    textRomanNum.Text = Resultado;
-                }
-                else MessageBox.Show("Ingrese un número válido.");
+                opcion1 = Convert.ToInt32(textNum.Text); 
+                Resultado = Op.NumRomano(((int)opcion1)).ToString(); 
+                textRomanNum.Text = Resultado;
             }
             catch (Exception ex)
             {
@@ -462,6 +444,23 @@ namespace Operaciones
                     textBonificacion.Text = Resultado;
                 }
                 else MessageBox.Show("Ingrese un número válido.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void CalcularTri_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                opcion1 = Convert.ToInt32(textPriLado.Text);
+                opcion2 = Convert.ToInt32(textSegLado.Text);
+                opcion3 = Convert.ToInt32(textTerLado.Text);
+                Resultado = Op.TipoTriangulo(opcion1, opcion2, opcion3);
+                textResTri.Text = Resultado;
             }
             catch (Exception ex)
             {

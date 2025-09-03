@@ -151,6 +151,10 @@
             this.textSegHermano = new System.Windows.Forms.TextBox();
             this.textPriHermano = new System.Windows.Forms.TextBox();
             this.panelIncentivos = new System.Windows.Forms.Panel();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.textProViernes = new System.Windows.Forms.TextBox();
+            this.textProSabado = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.textProJueves = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
@@ -163,10 +167,6 @@
             this.textProMiercoles = new System.Windows.Forms.TextBox();
             this.textIncentivos = new System.Windows.Forms.TextBox();
             this.textProLunes = new System.Windows.Forms.TextBox();
-            this.textProSabado = new System.Windows.Forms.TextBox();
-            this.textProViernes = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
             this.panelNumMay = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
@@ -1401,6 +1401,38 @@
             this.panelIncentivos.Size = new System.Drawing.Size(464, 274);
             this.panelIncentivos.TabIndex = 15;
             // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(44, 145);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(101, 13);
+            this.label46.TabIndex = 16;
+            this.label46.Text = "Produccion Sabado";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(44, 119);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(99, 13);
+            this.label45.TabIndex = 15;
+            this.label45.Text = "Produccion Viernes";
+            // 
+            // textProViernes
+            // 
+            this.textProViernes.Location = new System.Drawing.Point(230, 112);
+            this.textProViernes.Name = "textProViernes";
+            this.textProViernes.Size = new System.Drawing.Size(182, 20);
+            this.textProViernes.TabIndex = 14;
+            // 
+            // textProSabado
+            // 
+            this.textProSabado.Location = new System.Drawing.Point(230, 138);
+            this.textProSabado.Name = "textProSabado";
+            this.textProSabado.Size = new System.Drawing.Size(182, 20);
+            this.textProSabado.TabIndex = 13;
+            // 
             // label40
             // 
             this.label40.AutoSize = true;
@@ -1501,38 +1533,6 @@
             this.textProLunes.Name = "textProLunes";
             this.textProLunes.Size = new System.Drawing.Size(182, 20);
             this.textProLunes.TabIndex = 0;
-            // 
-            // textProSabado
-            // 
-            this.textProSabado.Location = new System.Drawing.Point(230, 138);
-            this.textProSabado.Name = "textProSabado";
-            this.textProSabado.Size = new System.Drawing.Size(182, 20);
-            this.textProSabado.TabIndex = 13;
-            // 
-            // textProViernes
-            // 
-            this.textProViernes.Location = new System.Drawing.Point(230, 112);
-            this.textProViernes.Name = "textProViernes";
-            this.textProViernes.Size = new System.Drawing.Size(182, 20);
-            this.textProViernes.TabIndex = 14;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(44, 119);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(99, 13);
-            this.label45.TabIndex = 15;
-            this.label45.Text = "Produccion Viernes";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(44, 145);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(101, 13);
-            this.label46.TabIndex = 16;
-            this.label46.Text = "Produccion Sabado";
             // 
             // panelNumMay
             // 
@@ -1709,6 +1709,7 @@
             this.CalcularTri.TabIndex = 4;
             this.CalcularTri.Text = "Calcular";
             this.CalcularTri.UseVisualStyleBackColor = true;
+            this.CalcularTri.Click += new System.EventHandler(this.CalcularTri_Click);
             // 
             // textSegLado
             // 
@@ -1878,12 +1879,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 274);
+            this.Controls.Add(this.panelNumMay);
+            this.Controls.Add(this.panelTipoTriangulo);
             this.Controls.Add(this.PanelMultiplicar);
             this.Controls.Add(this.panelMontoVentas);
             this.Controls.Add(this.panelNumRoman);
-            this.Controls.Add(this.panelTipoTriangulo);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelNumMay);
             this.Controls.Add(this.panelIncentivos);
             this.Controls.Add(this.panelPlaPa);
             this.Controls.Add(this.panelHermano);
