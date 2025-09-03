@@ -437,13 +437,9 @@ namespace Operaciones
         {
             try
             {
-                if (int.TryParse(textMontVent.Text, out int v1))
-                {
-                    opcion1 = v1;
-                    Resultado = Op.Bonificacion(((int)opcion1)).ToString();
-                    textBonificacion.Text = Resultado;
-                }
-                else MessageBox.Show("Ingrese un número válido.");
+                opcion1 = Convert.ToInt32(textMontVent.Text);
+                Resultado = Op.Bonificacion(((int)opcion1)).ToString();
+                textBonificacion.Text = Resultado;
             }
             catch (Exception ex)
             {
